@@ -1,0 +1,61 @@
+
+@import url(https://fonts.googleapis.com/css?family=Exo+2);
+html, body {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 14pt;
+  margin:0;
+}
+
+/*///////////////////////////////////////////////////////////nav bar css//////////////////////////////////////////////////////////////////////////////*/
+#navItems li {
+  display: inline;
+  align-content:center;
+  margin-left:10%;
+}
+ #navItems a {
+	color: #DAB97C; 
+ }
+ a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+#messages {
+  float: left;
+  clear: both;
+}
+
+#nav {
+  background-color: #121212;
+  left :0;
+}
+#navbox{
+
+	}
+/*///////////////////////////////////////////////////////////header css//////////////////////////////////////////////////////////////////////////////*/
+
+
+
+/*///////////////////////////////////////////////////////////footer css//////////////////////////////////////////////////////////////////////////////*/
+#footer {
+  background-color: #891113;
+  clear: both;
+  padding-top: 20px;
+  color: #DAB97C;
+  text-decoration: none;
+}
+#footer a {
+color:white;	
+}
+
