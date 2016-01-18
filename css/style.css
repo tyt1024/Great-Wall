@@ -5,7 +5,7 @@ html, body {
   font-size: 14pt;
   margin:0 0 0 0;
     margin-top: -10px;
-    background-color: white;
+    background-image: url(../img/bk.png);
 }
 
 /*///////////////////////////////////////////////////////////nav bar css//////////////////////////////////////////////////////////////////////////////*/
@@ -176,3 +176,40 @@ content:'\f099';
 content:'\f16d';
 }
 
+/*///////////////////////////////////////////////////////////About page//////////////////////////////////////////////////////////////////////////////*/
+
+#aboutdiv{
+	margin-bottom:20px;
+	width:75%;
+	min-width:30%;
+	background-color:#FBEDD5;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aboutT{
+	text-align:center;
+	padding-top:10px;
+}
+.aboutP{
+	border:double;
+	display: block;
+	 text-align:center;
+	 padding-left:3%;
+	 padding-right:3%;
+	 padding-top:1%;
+	 padding-bottom:1%;
+	 margin-left:5%;
+	 margin-right:5%;
+	
+}
+
+.aboutimg{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	width:90%;
+	min-width:25%;
+	height:auto;
+	padding-bottom:20px;
+}
