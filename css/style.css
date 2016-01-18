@@ -205,11 +205,33 @@ content:'\f16d';
 }
 
 .aboutimg{
-	display: block;
+	display: inline;
     margin-left: auto;
     margin-right: auto;
-	width:90%;
+	padding-left:5%;
+	width:50%;
 	min-width:25%;
 	height:auto;
 	padding-bottom:30px;
 }
+#info{
+	display: inline;
+	float:right;
+	border:double;
+	text-align:center;
+	margin-right:5%;
+	padding-left:3%;
+	padding-right:3%;
+	width:30%;
+	min-width:25%;
+	/*/////////////////fix this/////////////////*/
+	max-height:370px;
+	height:auto;
+	}
+
+
+
+
+
+
+

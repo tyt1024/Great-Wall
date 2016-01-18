@@ -23,7 +23,14 @@
 Reasonably priced, Burnaby Palace Restaurant has become a mainstay for business lunch and fine family style dining.
 Try our delicious food and elegant ambiance. You won’t be disappointed. Service matters a lot to Burnaby Palace Restaurant and we are committed to providing the highest level of excellence in customer service. Special care is always taken whether it’s preparing meals or making deliveries.
 *Reservations are recommended. For delivery, please place orders 1/2 hour before closing.</p>
-    <img class="aboutimg" src="img/Interior-design-ideas-of-Chinese-restaurant-room.jpg" width="1216" height="642" alt=""/> 
+    <img class="aboutimg" src="img/Interior-design-ideas-of-Chinese-restaurant-room.jpg" width="1216" height="642" alt=""/>
+    <div id="info"> 
+    <h1 class="contactT">CONTACT US</h1>
+    <p class="contactP">500 Willingdon Street, Burnaby, V5H 4W8</p>
+    <p class="contactP">info@greatwall.com</p>
+    <p class="contactP">Tel: 123-456-7890</p>
+    <p class="contactP">Fax: 123-456-7800</p>
+    </div>
     </div>
   <footerReplace metal:use-macro="/templating/footer.xhtml/page_footer">
     </footerReplace>
