@@ -25,7 +25,7 @@ Try our delicious food and elegant ambiance. You won’t be disappointed. Servic
 *Reservations are recommended. For delivery, please place orders 1/2 hour before closing.</p>
     <img class="aboutimg" src="img/Interior-design-ideas-of-Chinese-restaurant-room.jpg" width="1216" height="642" alt=""/>
     <div id="info"> 
-    <h1 class="contactT">CONTACT US</h1>
+    <h2 class="contactT">CONTACT US</h2>
     <p class="contactP">500 Willingdon Street, Burnaby, V5H 4W8</p>
     <p class="contactP">info@greatwall.com</p>
     <p class="contactP">Tel: 123-456-7890</p>
