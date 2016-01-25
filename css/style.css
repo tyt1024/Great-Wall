@@ -69,7 +69,7 @@ a:active {
 #footer {
   background-color: #891113;
   clear: both;
-  padding-top: 45px;
+  padding-top: 10px;
     padding-bottom: 20px;
   color: #DAB97C;
   text-decoration: none;
@@ -239,12 +239,81 @@ content:'\f16d';
 	background-color:#FBEDD5;
     margin-left: auto;
     margin-right: auto;
+	padding-bottom:10px;
 }
 .menuT{
 	text-align:center;
-	padding-top:10px;
+	padding-top:20px;
 }
 
+#menuinfo{
+	background-color:white;
+	padding-left:5px;
+	padding-right:5px;
+	width:96%;
+	margin-left: auto;
+    margin-right: auto;
+	height:auto;	
+	
+	
+}
 
+.menuh2{
+color:#891113;
+}
+ul{
+padding-right:40px;	
+}
+hr.style18 { 
+ border-top: 1px dashed #8c8b8b;
+} 
+
+.li-img {
+  display: table-cell;
+  vertical-align: middle;
+  width: 30%;
+  padding-right: 1em;
+}
+.li-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.li-text {
+  display: table-cell;
+  vertical-align: middle;
+  width: 70%;
+}
+.li-head {
+  margin: 0;
+}
+.li-sub {
+  margin: 0;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #891113;
+	border-radius: 8px;
+}
+
+.button3:hover {
+    background-color: #891113;
+    color: white;
+}
 
 
