@@ -316,4 +316,50 @@ hr.style18 {
     color: white;
 }
 
+/*///////////////////////////////////////////////////////////SHOPPING CART//////////////////////////////////////////////////////////////////////////////*/
 
+#shoopingdiv{
+	margin-bottom:20px;
+	width:75%;
+	min-width:30%;
+	background-color:#FBEDD5;
+    margin-left: auto;
+    margin-right: auto;
+	padding-bottom:40px;
+}
+.shoppingT{
+	text-align:center;
+	padding-top:20px;
+}
+
+#shoppinginfo{
+	background-color:white;
+	padding-left:5px;
+	padding-right:5px;
+	width:96%;
+	margin-left: auto;
+    margin-right: auto;
+	height:auto;	
+	
+}
+
+.qty{
+	display:inline-block;
+}
+
+.totalp{
+	display:inline-block;
+	margin-top:-2px;
+		
+}
+.button4 {
+    background-color: #891113; 
+    color: white; 
+    border: 2px solid #CF8F44;
+	border-radius: 8px;
+}
+
+.button4:hover {
+    background-color: #CF8F44;
+    color: black;
+}
