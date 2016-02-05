@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="./css/style.css" rel="stylesheet" type="text/css"/>
+<link href="./css/responsive.css" rel="stylesheet" type="text/css"/>
+  <!-- View -->
+<title>Great Wall</title>
+    <navReplace metal:use-macro="./templating/nav.xhtml/nav_bar">
+    </navReplace>
+  <body>
+
+
+
+
+  <headReplace metal:use-macro="/templating/head.xhtml/meta_head">
+  </headReplace>
+
+      
+          <div>
+
+
+
+      <div id="profileContainer">
+        <div id="userProfile" tal:condition="exists:profile">
+          <h2>User Profile</h2>
+          <span tal:content="profile/user_name"></span>
+          <br/><br/><br/>
+        </div>
+      </div>
+
+      <div id="shoppingCartContainer" tal:condition="php: Session::get('isLoggedIn')">
+
+        <table id="productTable">
+
+          <tr>
+            <th>Product</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Add</th>
+          </tr>
+
+          <tr>
+            <td>Fried Rice</td>
+            <td><input data-sku-qty="sk-2843y" type="number" value="1" min="1" max="5" step="1"/></td>
+            <td>8.99</td>
+            <td><input data-sku-add="sk-2843y" type="button" value="Add"/></td>
+          </tr>
+   
+
+        </table>
+        <input type="button" value="Start Cart" id="startCart"/>
+        <input type="button" value="End Cart" id="endCart"/>
+        <h2>Cart Summary</h2>
+        <ul id="shoppingCart">
+          <li data-item-qty="1" data-item-sku="sk-2843y"> Fried Rice (1) &#160;
+            <input type="button" data-remove-button="remove" value="X"/></li>
+        </ul>
+        <p id="cartTotal">Total: </p>
+        <input type="button" value="checkout" id="checkout"/>
+        <span style="display: inline; font-size: 8pt;"><i>You'll see taxes and other shipping costs (ha ha) during checkout.</i></span>
+
+      </div>
+
+      <div id="loginFormContainer" tal:condition="php: !Session::get('isLoggedIn')">
+
+        <form id="loginForm">
+          <fieldset>
+            <legend>Register</legend>
+            <input id="user_name" type="text" placeholder="user_name" name="user_name"
+              autofocus="autofocus"/><br/><br/>
+
+            <input id="password" type="password" placeholder="password" name="password"/><br/><br/>
+
+            <input id="loginbutton" type="button" value="Login"/>
+            <input id="resetLoginForm" type="reset" value="Reset"/>
+
+          </fieldset>
+        </form>
+
+      </div>
+
+
+<!-- tal:condition="exists: isLoggedIn" -->
+
+      <div id="logoutFormContainer" tal:condition="php: Session::get('isLoggedIn')">
+
+        <form id="logoutForm">
+          <fieldset>
+            <legend>Logout Form</legend>
+            <label for="password">Password: </label>
+            <input id="logoutbutton" type="button" value="Logout"/>
+            <input type="hidden" value="logout" name="logoutButton"/>
+          </fieldset>
+        </form>
+
+      </div>
+
+      <div id="messages">
+        <p>Messages:</p>
+        <ul id="talMessages" tal:condition="php: count(messages) GT 0">
+          <li tal:repeat="msg messages" class="${msg/type}"><span tal:content="msg/text"></span></li>
+        </ul>
+        <ul id="AJAXMessages">
+        </ul>
+      </div>
+      <br/><br/><br/>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="./js/main.js">
+      </script>
+      <script src="./js/function.js">
+      </script> 
+
+    <footerReplace metal:use-macro="/templating/footer.xhtml/page_footer">
+    </footerReplace>
+
+  </body>
+</html>

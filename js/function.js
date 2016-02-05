@@ -1,9 +1,9 @@
-        $(document).ready(function() {
+  $(document).ready(function() {
 
             //
             function loadProducts() {
                 $.ajax({
-                    url: "products.php",
+                    url: "./products.php",
                     type: "GET",
                     dataType: 'html',
                     success: function(returnedData) {
@@ -53,7 +53,7 @@
             $("#startCart").click(function() {
                 console.log("Start cart.");
                 $.ajax({
-                    url: "shoppingcart.php",
+                    url: "./shoppingcart.php",
                     type: "POST",
                     dataType: 'json',
                     data: {action: "startcart"},
@@ -72,7 +72,7 @@
 
                 console.log("End cart.");
                 $.ajax({
-                    url: "shoppingcart.php",
+                    url: "./shoppingcart.php",
                     type: "POST",
                     dataType: 'json',
                     data: {action: "cancelcart"},
@@ -105,7 +105,7 @@
 
                 console.log("Check out cart with the following items", itemArray);
                 $.ajax({
-                    url: "shoppingcart.php",
+                    url: "./shoppingcart.php",
                     type: "POST",
                     dataType: 'json',
                     data: {action: "checkoutcart", items: itemsAsJSON},
