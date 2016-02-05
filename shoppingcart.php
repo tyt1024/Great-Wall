@@ -1,58 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<link href="./css/style.css" rel="stylesheet" type="text/css"/>
-<link href="./css/responsive.css" rel="stylesheet" type="text/css"/>
-  <!-- View -->
-<title>Great Wall - Shopping Cart</title>
-    <navReplace metal:use-macro="./templating/nav.xhtml/nav_bar">
-    </navReplace>
-      <headReplace metal:use-macro="/templating/head.xhtml/meta_head">
-  </headReplace>
-  <body>
-<div id="shoopingdiv">
-<h1 class="shoppingT">Shopping Cart</h1>
-<div id="shoppinginfo">
-<hr class="style18"></hr>
-<br></br>
-<br></br>
-<ul style="list-style-type:none">
-<hr></hr>
-<div class="li-img">
-  <li><img src="img/6912876257_308f1793aa_o.jpg"/></li>
-  </div>
-  <div class="li-text">
-						<h4 class="li-head">Fried Rice</h4>
-						<p class="li-sub">Prawn, Steam Rice, Green Bean, Ham, Eggs.</p>
-                        <p class="li-sub">$8.99</p>
-<p class="qty">QTY:</p>                        
-<select>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="4">5</option>
-</select>
-<button class="button button3" style="float:right">UPDATE</button>
-<button class="button button3" style="float:right">DELECT</button>
-					</div>
-  <hr class="style18"></hr>
-  <h2 class="totalp">Total:</h2>
-  <button class="button button4" style="float:right">CHECK OUT</button>
-</ul>
-</div>
+<?php
 
-</div>
+require_once('init.php');
+loadScripts();
+
+    $data = array("status" => "not set!");
+
+    if(Utils::isPOST()) {
+        $scm = new ShoppingCartManager();
+
+        $parameters = new Parameters("POST");
+
+        $action = $parameters->getValue('action');
+
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        switch($action) {
+            case "startcart":
+                // start the cart, so start session, create cart table in DB
+                if(isset($_SESSION['started'])) {
+                    $data = array("status" => "fail", "msg" => "You already have a cart started.");
+                    echo json_encode($data, JSON_FORCE_OBJECT);
+                    return;
+                }
+
+                $id = $scm->startCart();
+                if(!empty($id)) {
+
+                    $_SESSION['started'] = "true";
+                    $_SESSION['id'] = $id;
+                    $data = array("status" => "success", "cart_id" => $id, "msg" => "Cart started.");
+
+                } else {
+                    $data = array("status" => "fail", "msg" => "Cart NOT started.");
+                }
+
+                break;
+            case "cancelcart":
+                // cancel the cart, end session, set cart row to 'cancelled'
+
+                if(!isset($_SESSION['started'])) {
+                    $data = array("status" => "fail", "msg" => "There is no cart to cancel.");
+                    echo json_encode($data, JSON_FORCE_OBJECT);
+                    return;
+                }
+                $affectedRows = $scm->cancelCart($_SESSION['id']);
+
+                if($affectedRows > 0) {
+
+                    session_unset();
+                    session_destroy();
+                    $data = array("status" => "success", "msg" => "Cart cancelled.");
+
+                } else {
+                    $data = array("status" => "fail", "msg" => "Cart NOT cancelled.");
+                }
+
+                break;
+            case "checkoutcart":
+                // check out the cart
+
+                if(!isset($_SESSION['started'])) {
+                    $data = array("status" => "fail", "msg" => "There is no cart to check out.");
+                    echo json_encode($data, JSON_FORCE_OBJECT);
+                    return;
+                }
+
+                // turn the JSON into an array of arrays (true means arrays and not objects)
+                $items = json_decode($_POST['items'], true);
+                $scm->addItemsToCart($items, $_SESSION['id']);
+
+                $affectedRows = $scm->checkoutCart($_SESSION['id']);
+
+                if($affectedRows > 0) {
+
+                    session_unset();
+                    session_destroy();
+                    $data = array("status" => "success", "msg" => "Cart successfully checked out.");
+
+                } else {
+                    $data = array("status" => "fail", "msg" => "Cart was NOT checked out.");
+                }
+                break;
+
+
+        }
+
+
+    } else {
+        $data = array("status" => "error", "msg" => "Only POST allowed.");
+
+    }
+
+    echo json_encode($data, JSON_FORCE_OBJECT);
 
 
 
-
-
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="./js/main.js"></script>
- 
-  <footerReplace metal:use-macro="/templating/footer.xhtml/page_footer">
-    </footerReplace>
-
-  </body>
-</html>
+?>
