@@ -11,14 +11,14 @@
 <link href="./css/responsive.css" rel="stylesheet" type="text/css"/>
   <body>
 
-    <div id="content">
-
-      <div id="shoppingCartContainer">
-
+    <div id="shoppingdiv">
+<h1 class="shoppingT">Shopping Cart</h1>
+      <div id="shoppinginfo">
+<hr class="style18"></hr>
         <table id="productTable">
 
           <thead>
-            <tr>
+            <tr class="shoppingT">
               <th>Product</th>
               <th>Quantity</th>
               <th>Price</th>
@@ -34,15 +34,15 @@
         </table>
 
 
-        <input type="button" value="Start Cart" id="startCart"/>
-        <input type="button" value="Cancel Cart" id="cancelCart"/>
+        <input type="button" value="Start Cart" id="startCart" class="button4"/>
+        <input type="button" value="Cancel Cart" id="cancelCart" class="button4"/>
 
-        <h2>Cart Summary</h2>
+        <h2 class="shoppingT">Cart Summary</h2>
         <ul id="shoppingCart">
           <!--<li data-item-qty="1" data-item-sku="sk-438s3x">Coffee Cup (1) &#160;
             <input type="button" data-remove-button="remove" value="X"/></li>-->
         </ul>
-        <input type="button" value="Check Out" id="checkoutcart"/>
+        <input type="button" value="Check Out" id="checkoutcart" class="button3"/>
         <span style="display: inline; font-size: 8pt;"><i>You'll see taxes and other shipping costs (ha ha) during checkout.</i></span>
 
       </div>
