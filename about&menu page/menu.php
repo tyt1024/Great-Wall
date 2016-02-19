@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="./css/style.css" rel="stylesheet" type="text/css"/>
-<link href="./css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/responsive.css" rel="stylesheet" type="text/css"/>
   <!-- View -->
 <title>Great Wall - Menu & Order Online</title>
     <navReplace metal:use-macro="./templating/nav.xhtml/nav_bar">
@@ -11,12 +11,12 @@
 
 
 
-  <headReplace metal:use-macro="/templating/head.xhtml/meta_head">
+  <headReplace metal:use-macro="../templating/head.xhtml/meta_head">
   </headReplace>
 
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="../js/main.js"></script>
 
 <div id="menudiv">
 <h1 class="menuT"> MENU & ORDER ONLINE</h1>
@@ -30,7 +30,7 @@
 <h2 class="menuh2">RICE</h2>
 <hr></hr>
 <div class="li-img">
-  <li><img src="img/6912876257_308f1793aa_o.jpg"/></li>
+  <li><img src="../img/fried_rice.jpg"/></li>
   </div>
   <div class="li-text">
 						<h4 class="li-head">Fried Rice</h4>
@@ -60,7 +60,7 @@
 </div>
 
 
-    <footerReplace metal:use-macro="/templating/footer.xhtml/page_footer">
+    <footerReplace metal:use-macro="../templating/footer.xhtml/page_footer">
     </footerReplace>
 
   </body>
