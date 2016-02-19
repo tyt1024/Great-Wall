@@ -30,7 +30,10 @@ loadScripts();
 
                     $_SESSION['started'] = "true";
                     $_SESSION['id'] = $id;
+                    //$data = array("status" => "success", "s_id", => session_id(),
+                    //    "cart_id" => $id, "msg" => "Cart started.");
                     $data = array("status" => "success", "cart_id" => $id, "msg" => "Cart started.");
+
 
                 } else {
                     $data = array("status" => "fail", "msg" => "Cart NOT started.");
